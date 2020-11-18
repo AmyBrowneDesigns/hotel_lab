@@ -15,7 +15,18 @@ public class Hotel {
     public int bedroomCount(){
         return this.bedrooms.size();
     }
+
+    public boolean checkAvailability(Bedroom bedroom){
+        for(Bedroom individualRoom:this.bedrooms){
+            if(individualRoom == bedroom){
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void checkInGuest(Guest guest, Bedroom bedroom){
-        bedroom.addGuest(guest);
+        if (bedroom.checkAvailability() == true){
+        bedroom.addGuest(guest);}
     }
 }

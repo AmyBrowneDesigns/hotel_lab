@@ -41,4 +41,15 @@ public class BedroomTest {
         bedroom.addGuest(guest);
         assertEquals(2, bedroom.countGuests());
     }
+
+    @Test
+    public void canCheckAvailable(){
+        assertEquals(true, bedroom.checkAvailability());
+    }
+
+    @Test
+    public void canCheckNotAvailable(){
+        bedroom.addGuest(guest);
+        assertEquals(false, bedroom.checkAvailability() );
+    }
 }

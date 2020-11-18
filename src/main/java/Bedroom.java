@@ -34,4 +34,11 @@ public class Bedroom {
         this.guests.add(guest);
     }
 
+    public boolean checkAvailability(){
+        if (this.guests.size() == 0){
+            return true;
+        }
+        return false;
+    }
+
 }

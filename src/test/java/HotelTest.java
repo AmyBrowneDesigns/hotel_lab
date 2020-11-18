@@ -31,10 +31,24 @@ public class HotelTest {
         assertEquals(3, hotel.bedroomCount());
     }
 
+//    @Test
+//    public void checkRoomAvailable(){
+//        assertEquals(true, hotel.checkAvailability(bedroom1));
+//    }
+
     @Test
     public void canCheckGuestIntoRoom(){
         hotel.checkInGuest(guest, bedroom1);
         assertEquals(1, bedroom1.countGuests());
     }
+
+    @Test
+    public void cantCheckGuestIntoOccupiedRoom(){
+        bedroom1.addGuest(guest);
+        hotel.checkInGuest(guest, bedroom1);
+        assertEquals(1, bedroom1.countGuests());
+
+    }
+    //
 
 }
